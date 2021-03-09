@@ -11,8 +11,7 @@
     "build": "tsc",
     "dev": "npm run build --watch --preserveWatchOutput",
     "lint": "eslint src --ext js,ts",
-    "test": "jest --collectCoverage",
-    "publish": "npm run build && npm publish"
+    "test": "jest --collectCoverage"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.13.9",
