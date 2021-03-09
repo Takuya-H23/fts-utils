@@ -1,6 +1,6 @@
 {
   "name": "fts-utils",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Functional Programming Utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,9 +9,10 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "yarn build --watch --preserveWatchOutput",
+    "dev": "npm run build --watch --preserveWatchOutput",
     "lint": "eslint src --ext js,ts",
-    "test": "jest --collectCoverage"
+    "test": "jest --collectCoverage",
+    "publish": "npm run build && publish"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.13.9",
