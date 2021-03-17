@@ -1,10 +1,15 @@
 /**
  * Run predicate functions. Returns true when every predicate evaluates true.
  * Otherwise returns false
- *
- * @param run - predicate function
- *
+ * @func
  * @public
+ * @example
+ *
+ * Predicate((x => x === 1)).run(1) // true
+ * Predicate((x => x === 1)).run(2) // false
+ * Predicate((x => x === 1))
+ *  .concat(Predicate(x => typeof x === 'number')).run(1) // true
+ * Predicate(isNumber).contramap(x => x.value).run({ value: 2 }) // true
  */
 
 type Run = (x: any) => boolean
