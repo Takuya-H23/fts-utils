@@ -24,7 +24,7 @@ export default function Predicate(run: Run): Predicate {
   return {
     run,
     concat: (other: Predicate): Predicate =>
-      Predicate(x => run(x) && other.run(x)),
-    contramap: (f: any): Predicate => Predicate(x => run(f(x))),
+      Predicate((x) => run(x) && other.run(x)),
+    contramap: (f: any): Predicate => Predicate((x) => run(f(x))),
   }
 }
