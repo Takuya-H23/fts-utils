@@ -48,3 +48,13 @@ describe('Right', () => {
     expect(either.map(add1).chain(rightChain).map(add1).fold(id, id)).toBe(2)
   })
 })
+
+describe('fromNullable', () => {
+  test.each([[undefined], [null]])('should return left', (x) => {
+    expect(Either.fromNullable(x).isLeft).toBe(true)
+  })
+
+  test.each([[1], ['hi']])('should return left', (x) => {
+    expect(Either.fromNullable(x).isRight).toBe(true)
+  })
+})

@@ -47,4 +47,8 @@ function Right(x: any): Right {
   }
 }
 
-export default { Left, Right }
+function fromNullable(x: any): Right | Left {
+  return x == null ? Left(x) : Right(x)
+}
+
+export default { Left, Right, fromNullable }
