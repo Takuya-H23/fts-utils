@@ -1,13 +1,13 @@
-type FoldLeft = (x: any) => any
-type FoldRight = (x: any) => any
+export type FoldLeft = (x: any) => any
+export type FoldRight = (x: any) => any
 
-type MapLeft = (x: any) => any
-type ChainLeft = (x: any) => Left
+export type MapLeft = (x: any) => any
+export type ChainLeft = (x: any) => Left
 
-type MapRight = (x: any) => any
-type ChainRight = (x: any) => any
+export type MapRight = (x: any) => any
+export type ChainRight = (x: any) => any
 
-type Left = {
+export type Left = {
   isLeft: boolean
   isRight: boolean
   x: any
@@ -16,7 +16,7 @@ type Left = {
   fold: (f: FoldLeft, g: FoldRight) => any
 }
 
-type Right = {
+export type Right = {
   x: any
   isLeft: boolean
   isRight: boolean
