@@ -5,7 +5,7 @@
  * @public
  * @example
  *
- * Predicate((x => x === 1)).run(1) // true
+ * Predicate((x => x === 2)).run(1) // true
  * Predicate((x => x === 1)).run(2) // false
  * Predicate((x => x === 1))
  *  .concat(Predicate(x => typeof x === 'number')).run(1) // true
@@ -20,7 +20,7 @@ export type Predicate = {
   contramap: (f: Contramap) => Predicate
 }
 
-export default function Predicate(run: Run): Predicate {
+export function Predicate(run: Run): Predicate {
   return {
     run,
     concat: (other: Predicate): Predicate =>

@@ -25,7 +25,7 @@ export type Right = {
   fold: (f: FoldLeft, g: FoldRight) => any
 }
 
-function Left(x: any): Left {
+export function Left(x: any): Left {
   return {
     x,
     isLeft: true,
@@ -36,7 +36,7 @@ function Left(x: any): Left {
   }
 }
 
-function Right(x: any): Right {
+export function Right(x: any): Right {
   return {
     x,
     isLeft: false,
@@ -47,8 +47,6 @@ function Right(x: any): Right {
   }
 }
 
-function fromNullable(x: any): Right | Left {
+export function fromNullable(x: any): Right | Left {
   return x == null ? Left(x) : Right(x)
 }
-
-export default { Left, Right, fromNullable }
