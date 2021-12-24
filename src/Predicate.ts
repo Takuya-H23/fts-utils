@@ -12,9 +12,9 @@
  * Predicate(isNumber).contramap(x => x.value).run({ value: 2 }) // true
  */
 
-type Run = (x: any) => boolean
-type Contramap = (x: any) => any
-type Predicate = {
+export type Run = (x: any) => boolean
+export type Contramap = (x: any) => any
+export type Predicate = {
   run: Run
   concat: (other: Predicate) => Predicate
   contramap: (f: Contramap) => Predicate
@@ -24,7 +24,7 @@ export default function Predicate(run: Run): Predicate {
   return {
     run,
     concat: (other: Predicate): Predicate =>
-      Predicate((x) => run(x) && other.run(x)),
-    contramap: (f: any): Predicate => Predicate((x) => run(f(x))),
+      Predicate((x: any) => run(x) && other.run(x)),
+    contramap: (f: any): Predicate => Predicate((x: any) => run(f(x))),
   }
 }
